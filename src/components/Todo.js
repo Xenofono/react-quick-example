@@ -8,7 +8,16 @@ const Todo = ({title, bolibompa, id, removeTodo}) => {
         removeTodo(id)
     }
 
-    return <div className={styles.Todo} >
+    //lägg till defaultcss
+    const css = [styles.Todo]
+
+    //om todo är completed så lägg till cssklassen Completed
+    if(bolibompa){
+        css.push(styles.Completed)
+    }
+    //join konverterar array till string
+    //[styles.Todo, styles.Completed] = "Todo Completed"
+    return <div className={css.join(' ')} >
         <h4 >{title}</h4>
         <p>{id}</p>
         <p>{bolibompa}</p>

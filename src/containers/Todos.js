@@ -45,7 +45,7 @@ const Todos = props => {
 
     return (
         <div className={css.Todos}>
-            {toShow}
+            {todoList.length === 0 ? <p>laddar</p> :toShow}
             {example}
         </div>
     )
